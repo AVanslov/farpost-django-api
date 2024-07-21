@@ -1,6 +1,6 @@
 asgiref==3.8.1
 Django==5.0.7
-djangorestframework==3.15.2
+djangorestframework==3.12.4
 python-dotenv==0.10.1
 pytz==2024.1
 sqlparse==0.5.1

@@ -9,6 +9,5 @@ router = SimpleRouter()
 router.register('adds', AddViewSet, basename='add')
 
 urlpatterns = [
-    path('api-token-auth/', views.obtain_auth_token),
     path('', include(router.urls)),
 ]

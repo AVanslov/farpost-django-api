@@ -16,7 +16,7 @@ class Author(models.Model):
 
 
 class Add(models.Model):
-    id = models.IntegerField()
+    add_id = models.IntegerField()
     title = models.CharField(max_length=MAX_LENGTH)
     author = models.ForeignKey(
         Author,
