@@ -2,15 +2,22 @@
 
 # Описание
 
-API-сервис для получения данных о первых 10 объявлениях по [ссылке](https://www.farpost.ru/vladivostok/service/construction/guard/+/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BD%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F/) с сервиса farpost.ru
+**API-сервис для получения данных о первых 10 объявлениях по [ссылке](https://www.farpost.ru/vladivostok/service/construction/guard/+/%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B+%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE%D0%BD%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F/) с сервиса farpost.ru**
 
+Проект разработан таким образом, чтобы его было легко расширять, тестровать и запускать в работу.
+
+Выполнены все работы по предварительной настройке CI/CD.
+
+Проект легко запустить локально с помощью docker-compose.
 
 # Cтек
 ![Python](https://img.shields.io/badge/-Python-black?style=for-the-badge&logo=python)
 ![Django](https://img.shields.io/badge/-Django_REST_FRAMEWORK-black?style=for-the-badge&logo=Django)
 ![Scrapy](https://img.shields.io/badge/-Scrapy-black?style=for-the-badge&logo=Scrapy)
-![ReDoc](https://img.shields.io/badge/-ReDoc-black?style=for-the-badge&logo=ReDoc)
-![Pytest](https://img.shields.io/badge/-Pytest-black?style=for-the-badge&logo=Pytest)
+![Nginx](https://img.shields.io/badge/-Nginx-black?style=for-the-badge&logo=Nginx)
+![Docker](https://img.shields.io/badge/-Docker-black?style=for-the-badge&logo=Docker)
+![Swager](https://img.shields.io/badge/-Swager-black?style=for-the-badge&logo=Swager)
+![GitHub](https://img.shields.io/badge/-GitHub_Actions-black?style=for-the-badge&logo=GitHub)
 
 
 # Установка и запуск
@@ -127,8 +134,6 @@ Content-Type: application/json
 Authorization: Bearer <токен>
 ```
 
-
-
 ### Как протестировать API
 
 Запросы для тестирования доступны в корневой папке проекта в файле requests.http
@@ -155,6 +160,13 @@ Content-Type: application/json
 Authorization: Bearer <токен>
 ```
 
+### Идеи по развитию
+
+Добработать логику парсера, сейчас два запроса, можно объеденить в один скрипт для генерации JSON, также добавить логику для исключения дулбикатов объекта автора в БД при импорте фикстур.
+
+Написать тесты, например, на Pytest.
+
+Улучшить внешний вид админ панели, уточнить локализацию.
 
 # Автор
 ## Александр Бучельников
