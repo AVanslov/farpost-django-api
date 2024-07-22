@@ -15,11 +15,59 @@ API-сервис для получения данных о первых 10 об�
 
 # Установка и запуск
 
-Клонировние репозиитори
+***Клонировать репозиторий и перейти в него в командной строке:***
 
-Установка виртулаьного окружения и зависимостей
+```
+git clone git@github.com:your_username_in_github/farpost-django-api.git
+```
 
-Запуск проекта
+***Cоздать и активировать виртуальное окружение:***
+```
+
+Для Windows:
+python -m venv env
+source venv/Script/activate
+
+Для Linux/MacOS:
+python3 -m venv env
+source venv/bin/activate
+```
+***Установить зависимости из файла requirements.txt:***
+
+```
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+***Как заполнить .env:***
+
+В случае запуска в режиме DEBUG=False корневой папке проекта создайте файл .env и скопируйте в него код с поля ниже.
+
+```
+POSTGRES_USER=django_user
+POSTGRES_PASSWORD=mysecretpassword
+POSTGRES_DB=django
+DB_HOST=db
+DB_PORT=5432
+```
+
+**Запуск проекта**
+
+Для запуска проекта поочередно выполните команды из листинга
+
+```
+sudo docker compose stop && sudo docker compose up --build
+
+# миграции и запуск парсера выполняется автоматически в Dockerfile
+
+sudo docker compose exec backend python manage.py collectstatic
+
+sudo docker compose exec backend cp -r /app/farpost/collected_static/. /backend_static/static/
+
+sudo docker compose exec backend python manage.py loaddata ../data/final_data_farpost_authors.json
+
+sudo docker compose exec backend python manage.py loaddata ../data/final_data_farpost_adds.json
+```
 
 ## Как реализован сбор данных
 
@@ -40,7 +88,7 @@ API-сервис для получения данных о первых 10 об�
 ### Документация к API
 
 Оформленная документация к API доступна после запуска приложения по адресу:
-http://localhost:8000/api/docs/
+http://localhost:8000/swagger/
 
 #### Авторизация
 
