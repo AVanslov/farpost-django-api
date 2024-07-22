@@ -1,5 +1,4 @@
 from django.contrib import admin
-from rest_framework.authtoken import views
 from django.urls import include, path
 
 urlpatterns = [
