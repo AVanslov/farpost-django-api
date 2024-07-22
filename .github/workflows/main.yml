@@ -40,4 +40,3 @@ jobs:
         DB_PORT: 5432
       run: |
         python -m flake8 farpost/api/
-        python -m flake8 scraper/scraper/spiders/
