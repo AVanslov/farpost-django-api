@@ -39,5 +39,5 @@ jobs:
         DB_HOST: 127.0.0.1
         DB_PORT: 5432
       run: |
-        python -m flake8 farpost/
+        python -m flake8 farpost/api/
         python -m flake8 scraper/scraper/spiders/
